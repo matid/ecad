@@ -1,6 +1,6 @@
 Flow report for pong
-Fri Oct 30 16:33:09 2009
-Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Full Version
+Fri Nov 06 10:04:05 2009
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
 ---------------------
@@ -35,27 +35,27 @@ applicable agreement for further details.
 
 
 
-+------------------------------------------------------------------------------------+
-; Flow Summary                                                                       ;
-+------------------------------------+-----------------------------------------------+
-; Flow Status                        ; Successful - Fri Oct 30 16:33:08 2009         ;
-; Quartus II Version                 ; 9.0 Build 184 04/29/2009 SP 1 SJ Full Version ;
-; Revision Name                      ; pong                                          ;
-; Top-level Entity Name              ; pong                                          ;
-; Family                             ; Cyclone II                                    ;
-; Device                             ; EP2C35F672C6                                  ;
-; Timing Models                      ; Final                                         ;
-; Met timing requirements            ; No                                            ;
-; Total logic elements               ; 509 / 33,216 ( 2 % )                          ;
-;     Total combinational functions  ; 504 / 33,216 ( 2 % )                          ;
-;     Dedicated logic registers      ; 105 / 33,216 ( < 1 % )                        ;
-; Total registers                    ; 105                                           ;
-; Total pins                         ; 115 / 475 ( 24 % )                            ;
-; Total virtual pins                 ; 0                                             ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                           ;
-; Embedded Multiplier 9-bit elements ; 4 / 70 ( 6 % )                                ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                                ;
-+------------------------------------+-----------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Flow Summary                                                                      ;
++------------------------------------+----------------------------------------------+
+; Flow Status                        ; Successful - Fri Nov 06 10:04:05 2009        ;
+; Quartus II Version                 ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name                      ; pong                                         ;
+; Top-level Entity Name              ; pong                                         ;
+; Family                             ; Cyclone II                                   ;
+; Device                             ; EP2C35F672C6                                 ;
+; Timing Models                      ; Final                                        ;
+; Met timing requirements            ; No                                           ;
+; Total logic elements               ; 509 / 33,216 ( 2 % )                         ;
+;     Total combinational functions  ; 504 / 33,216 ( 2 % )                         ;
+;     Dedicated logic registers      ; 105 / 33,216 ( < 1 % )                       ;
+; Total registers                    ; 105                                          ;
+; Total pins                         ; 115 / 475 ( 24 % )                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 4 / 70 ( 6 % )                               ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                               ;
++------------------------------------+----------------------------------------------+
 
 
 +-----------------------------------------+
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/30/2009 16:32:11 ;
+; Start date & time ; 11/06/2009 10:03:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pong                ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ applicable agreement for further details.
 +------------------------------------+------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                        ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 114364807279.125692033003844 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 121373701873.125750181303364 ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                           ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP             ; 0                            ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                     ; --            ; --          ; Top            ;
@@ -88,24 +88,24 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:16     ; 1.0                     ; 190 MB              ; 00:00:07                           ;
-; Fitter                  ; 00:00:19     ; 1.0                     ; 262 MB              ; 00:00:12                           ;
-; Assembler               ; 00:00:07     ; 1.0                     ; 226 MB              ; 00:00:04                           ;
-; Classic Timing Analyzer ; 00:00:02     ; 1.0                     ; 137 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:44     ; --                      ; --                  ; 00:00:24                           ;
+; Analysis & Synthesis    ; 00:00:09     ; 1.0                     ; 210 MB              ; 00:00:07                           ;
+; Fitter                  ; 00:00:12     ; 1.0                     ; 254 MB              ; 00:00:12                           ;
+; Assembler               ; 00:00:04     ; 1.0                     ; 233 MB              ; 00:00:04                           ;
+; Classic Timing Analyzer ; 00:00:03     ; 1.0                     ; 147 MB              ; 00:00:02                           ;
+; Total                   ; 00:00:28     ; --                      ; --                  ; 00:00:25                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                       ;
-+-------------------------+------------------+------------+------------+----------------+
-; Module Name             ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+-------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis    ; pccl058          ; Windows XP ; 5.1        ; i686           ;
-; Fitter                  ; pccl058          ; Windows XP ; 5.1        ; i686           ;
-; Assembler               ; pccl058          ; Windows XP ; 5.1        ; i686           ;
-; Classic Timing Analyzer ; pccl058          ; Windows XP ; 5.1        ; i686           ;
-+-------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++-------------------------+------------------+---------------+------------+----------------+
+; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++-------------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis    ; megumi           ; Windows Vista ; 6.1        ; i686           ;
+; Fitter                  ; megumi           ; Windows Vista ; 6.1        ; i686           ;
+; Assembler               ; megumi           ; Windows Vista ; 6.1        ; i686           ;
+; Classic Timing Analyzer ; megumi           ; Windows Vista ; 6.1        ; i686           ;
++-------------------------+------------------+---------------+------------+----------------+
 
 
 ------------

@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.553 ns
+From           : SW[0]
+To             : game_logic:gl|counter:right_counter|i[1]
+From Clock     : --
+To Clock       : CLOCK_27
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.972 ns
+From           : game_logic:gl|counter:left_counter|i[2]
+To             : HEX0[0]
+From Clock     : CLOCK_27
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.875 ns
+From           : SW[4]
+To             : game_logic:gl|counter:left_counter|i[5]
+From Clock     : --
+To Clock       : CLOCK_27
+Failed Paths   : 0
+
+Type           : Clock Setup: 'pll108MHz:pll|altpll:altpll_component|_clk0'
+Slack          : 0.596 ns
+Required Time  : 108.00 MHz ( period = 9.259 ns )
+Actual Time    : 115.43 MHz ( period = 8.663 ns )
+From           : game_logic:gl|counter:left_counter|i[2]
+To             : renderer:r|blue[3]
+From Clock     : pll108MHz:pll|altpll:altpll_component|_clk0
+To Clock       : pll108MHz:pll|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'pll108MHz:pll|altpll:altpll_component|_clk0'
+Slack          : 0.391 ns
+Required Time  : 108.00 MHz ( period = 9.259 ns )
+Actual Time    : N/A
+From           : game_logic:gl|counter:right_counter|i[9]
+To             : game_logic:gl|counter:right_counter|i[9]
+From Clock     : pll108MHz:pll|altpll:altpll_component|_clk0
+To Clock       : pll108MHz:pll|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

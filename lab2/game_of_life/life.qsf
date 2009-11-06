@@ -28,7 +28,7 @@ set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name TOP_LEVEL_ENTITY life
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 7.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:24:20  AUGUST 24, 2007"
-set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP1"
 set_location_assignment PIN_N25 -to SW[0]
 set_location_assignment PIN_N26 -to SW[1]
 set_location_assignment PIN_P25 -to SW[2]
@@ -542,3 +542,8 @@ set_global_assignment -name VERILOG_FILE life.v
 set_global_assignment -name SEARCH_PATH Tiger_comp/
 set_global_assignment -name LL_SECURITY_ROUTING_INTERFACE OFF -section_id Top
 set_global_assignment -name LL_SECURITY_ROUTING_INTERFACE OFF -section_id "game_of_life:gol"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "IO PATHS AND MINIMUM TPD PATHS"
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT FAST
+set_global_assignment -name FITTER_EFFORT "FAST FIT"
+set_global_assignment -name VERILOG_FILE cursor_shape.v
+set_global_assignment -name VERILOG_FILE cursor_outline.v

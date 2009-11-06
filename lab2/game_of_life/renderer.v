@@ -37,7 +37,7 @@ module renderer(
 		if (candraw) begin
 		    n_vga_blank <= 1'b0;
 		    
-		    addr <= 40*(y >> 5)+(x >> 5);
+		    addr <= 40*(y >> 5)+((x+1) >> 5);
 		    
 		    if(x%32 == 0 || x%32 == 31 || y%32 == 0 || y%32 == 31) begin
 				red <= 10'd0;

@@ -5,3 +5,4 @@ incremental_db/
 *.rpt
 *.done
 *.summary
+*.bak

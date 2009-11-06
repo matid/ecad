@@ -1,2 +1,4 @@
 db/
 incremental_db/
+*.qws
+*.qdf

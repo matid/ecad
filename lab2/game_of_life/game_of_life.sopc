@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<system name="game_of_life">
+    <parameter valueString="-2134554856" name="systemHash"/>
+    <parameter valueString="1187945034663" name="timeStamp"/>
+    <parameter valueString="false" name="generateLegacySDK"/>
+    <parameter name="bonusData">bonusData 
+{
+   element jtag_uart.controlSlave
+   {
+      datum baseAddress
+      {
+         value = "4026533952";
+         type = "long";
+      }
+   }
+   element jtag_uart_1
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+   }
+   element jtag_uart_1.controlSlave
+   {
+      datum baseAddress
+      {
+         value = "4026533968";
+         type = "long";
+      }
+   }
+   element jtag_uart
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+   }
+   element tiger_top_0.debugSlave
+   {
+      datum baseAddress
+      {
+         value = "4026533984";
+         type = "long";
+      }
+   }
+   element HexLED_0
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
+   element RedLED.s1
+   {
+      datum baseAddress
+      {
+         value = "4026533888";
+         type = "long";
+      }
+   }
+   element GreenLED
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+      datum megawizard_uipreferences
+      {
+         value = "{}";
+         type = "String";
+      }
+   }
+   element grid_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "4026531840";
+         type = "long";
+      }
+   }
+   element HexLED_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "4026533920";
+         type = "long";
+      }
+   }
+   element sdram.s1
+   {
+      datum baseAddress
+      {
+         value = "8388608";
+         type = "long";
+      }
+   }
+   element GreenLED.s1
+   {
+      datum baseAddress
+      {
+         value = "4026533904";
+         type = "long";
+      }
+   }
+   element RedLED
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+      datum megawizard_uipreferences
+      {
+         value = "{}";
+         type = "String";
+      }
+   }
+   element state_0
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+   element state_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "4026533936";
+         type = "long";
+      }
+   }
+   element onchip_mem
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+      datum megawizard_uipreferences
+      {
+         value = "{memorySize=Bytes}";
+         type = "String";
+      }
+   }
+   element tiger_top_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element grid_0
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element sdram
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+      datum megawizard_uipreferences
+      {
+         value = "{}";
+         type = "String";
+      }
+   }
+   element onchip_mem.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "long";
+      }
+   }
+}
+</parameter>
+    <parameter valueString="false" name="hardcopyCompatible"/>
+    <parameter valueString="CYCLONEII" name="deviceFamily"/>
+    <parameter valueString="false" name="generateLegacySim"/>
+    <parameter valueString="VERILOG" name="hdlLanguage"/>
+    <module version="7.1" name="clk" kind="clock_source">
+        <parameter valueString="true" name="clockFrequencyKnown"/>
+        <parameter valueString="25000000" name="clockFrequency"/>
+    </module>
+    <module version="1.0" name="tiger_top_0" kind="tiger_top"/>
+    <module version="7.1" name="onchip_mem" kind="altera_avalon_onchip_memory2">
+        <parameter valueString="32" name="dataWidth"/>
+        <parameter valueString="false" name="dualPort"/>
+        <parameter valueString="false" name="simAllowMRAMContentsFile"/>
+        <parameter valueString="true" name="writable"/>
+        <parameter valueString="AUTO" name="blockType"/>
+        <parameter valueString="4096" name="memorySize"/>
+        <parameter valueString="false" name="useShallowMemBlocks"/>
+        <parameter valueString="1" name="slave1Latency"/>
+        <parameter valueString="true" name="initMemContent"/>
+        <parameter valueString="onchip_mem" name="initializationFileName"/>
+        <parameter valueString="false" name="useNonDefaultInitFile"/>
+        <parameter valueString="1" name="slave2Latency"/>
+    </module>
+    <module version="7.1" name="RedLED" kind="altera_avalon_pio">
+        <parameter valueString="RISING" name="edgeType"/>
+        <parameter valueString="18" name="width"/>
+        <parameter valueString="Output" name="direction"/>
+        <parameter valueString="LEVEL" name="irqType"/>
+        <parameter valueString="false" name="captureEdge"/>
+        <parameter valueString="false" name="simDoTestBenchWiring"/>
+        <parameter valueString="false" name="generateIRQ"/>
+        <parameter valueString="0" name="simDrivenValue"/>
+    </module>
+    <module version="7.1" name="GreenLED" kind="altera_avalon_pio">
+        <parameter valueString="RISING" name="edgeType"/>
+        <parameter valueString="9" name="width"/>
+        <parameter valueString="Output" name="direction"/>
+        <parameter valueString="LEVEL" name="irqType"/>
+        <parameter valueString="false" name="captureEdge"/>
+        <parameter valueString="false" name="simDoTestBenchWiring"/>
+        <parameter valueString="false" name="generateIRQ"/>
+        <parameter valueString="0" name="simDrivenValue"/>
+    </module>
+    <module version="1.0" name="HexLED_0" kind="HexLED"/>
+    <module version="1.0" name="grid_0" kind="grid"/>
+    <module version="1.0" name="state_0" kind="state"/>
+    <module version="7.1" name="sdram" kind="altera_avalon_new_sdram_controller">
+        <parameter valueString="20.0" name="TRP"/>
+        <parameter valueString="16" name="dataWidth"/>
+        <parameter valueString="12" name="rowWidth"/>
+        <parameter valueString="70.0" name="TRFC"/>
+        <parameter valueString="true" name="registerDataIn"/>
+        <parameter valueString="3" name="casLatency"/>
+        <parameter valueString="100.0" name="powerUpDelay"/>
+        <parameter valueString="true" name="generateSimulationModel"/>
+        <parameter valueString="2" name="initRefreshCommands"/>
+        <parameter valueString="" name="masteredTristateBridgeSlave"/>
+        <parameter valueString="3" name="TMRD"/>
+        <parameter valueString="14.0" name="TWR"/>
+        <parameter valueString="0.0" name="initNOPDelay"/>
+        <parameter valueString="15.625" name="refreshPeriod"/>
+        <parameter valueString="5.5" name="TAC"/>
+        <parameter valueString="8" name="columnWidth"/>
+        <parameter valueString="4" name="numberOfBanks"/>
+        <parameter valueString="1" name="numberOfChipSelects"/>
+        <parameter valueString="false" name="pinsSharedViaTriState"/>
+        <parameter valueString="20.0" name="TRCD"/>
+        <parameter valueString="custom" name="model"/>
+        <parameter valueString="8388608" name="size"/>
+    </module>
+    <module version="1.0" name="jtag_uart" kind="vJTAGUart"/>
+    <module version="1.0" name="jtag_uart_1" kind="vJTAGUart"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="tiger_top_0.global_signals_clock"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="onchip_mem.clk1"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="RedLED.clk"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="GreenLED.clk"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="HexLED_0.global_signals_clock"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="grid_0.avalon_slave_0_clock"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="state_0.avalon_slave_0_clock"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="sdram.clk"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="jtag_uart.global_signals_clock"/>
+    <connection version="7.1" start="clk.clk" kind="clock" end="jtag_uart_1.global_signals_clock"/>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="onchip_mem.s1">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0x0000" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.instructionMaster" kind="avalon" end="onchip_mem.s1">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0x0000" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="sdram.s1">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0x00800000" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.instructionMaster" kind="avalon" end="sdram.s1">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0x00800000" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="RedLED.s1">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0xf0000800" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="GreenLED.s1">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0xf0000810" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="HexLED_0.avalon_slave_0">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0xf0000820" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="grid_0.avalon_slave_0">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0xf0000000" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="state_0.avalon_slave_0">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0xf0000830" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="jtag_uart_1.controlSlave">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0xf0000850" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="jtag_uart.controlSlave">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0xf0000840" name="baseAddress"/>
+    </connection>
+    <connection version="6.1" start="tiger_top_0.dataMaster" kind="avalon" end="tiger_top_0.debugSlave">
+        <parameter valueString="1" name="arbitrationPriority"/>
+        <parameter valueString="0xf0000860" name="baseAddress"/>
+    </connection>
+    <connection version="7.1" start="tiger_top_0.dataMaster_irq" kind="interrupt" end="tiger_top_0.debugSlave_irq">
+        <parameter valueString="0" name="irqNumber"/>
+    </connection>
+</system>
+

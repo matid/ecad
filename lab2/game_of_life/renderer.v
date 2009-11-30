@@ -37,38 +37,35 @@ module renderer(
 		if (candraw) begin
 		    n_vga_blank <= 1'b0;
 		    
-		    addr <= 40*(y >> 5)+((x+1) >> 5);
-		    
-		    if(x%32 == 0 || x%32 == 31 || y%32 == 0 || y%32 == 31) begin
-				red <= 10'd0;
-				green <= 10'b11_1111_1111;
-				blue <= 10'd0;
-			end else begin
-				if(data == 8'b0000_0000) begin
-					red <= 10'b11_1111_1111;
-					green <= 10'b11_1111_1111;
-					blue <= 10'b11_1111_1111;
-				end else begin
-					red <= 10'd0;
-					green <= 10'd0;
-					blue <= 10'd0;
-				end
-			end
+			addr <= 40*(y >> 5)+(x >> 5);
 			
 			if(x >= cursor_x && x < cursor_x + `cursorwidth && y >= cursor_y && y < cursor_y + `cursorheight) begin
-				if(shape) begin
-					red <= 10'd0;
-					green <= 10'd0;
-					blue <= 10'd0;
-				end
-			
 				if(outline) begin
 					red <= 10'b11_1111_1111;
 					green <= 10'b11_1111_1111;
 					blue <= 10'b11_1111_1111;
+				end else if(shape) begin
+					red <= 10'd0;
+					green <= 10'd0;
+					blue <= 10'd0;
+				end
+			end else begin
+				if(x%32 == 0 || x%32 == 31 || y%32 == 0 || y%32 == 31) begin
+					red <= 10'd0;
+					green <= 10'b11_1111_1111;
+					blue <= 10'd0;
+				end else begin
+					if(data == 8'b0000_0000) begin
+						red <= 10'b11_1111_1111;
+						green <= 10'b11_1111_1111;
+						blue <= 10'b11_1111_1111;
+					end else begin
+						red <= 10'd0;
+						green <= 10'd0;
+						blue <= 10'd0;
+					end
 				end
 			end
-			
 		end else begin
 			// if we are not in the visible area, we must set the screen blank
 			n_vga_blank <= 1'b1;

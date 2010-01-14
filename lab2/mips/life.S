@@ -1,10 +1,10 @@
 #######################################################
 ## Game of Life
 ##
-## Name :
-## College  :
-## CRSID:
-## Date :
+## Name: Mateusz Drozdzynski
+## College: King's
+## CRSID: md481
+## Date: 01/12/2009
 #######################################################
 
 #include "regdef.h"
@@ -31,12 +31,14 @@ main.toggle:
 	nop
 	jal toggle
 	nop
+
 main.nextstate:
 	lw t1, 0xf0000830
 	beq a1, t1, main.end
 	nop
 	jal nextstate
 	nop
+
 main.end:
 	j main.loop
 	nop
@@ -83,27 +85,37 @@ toggle:
 nextstate:
 	# reset button press indicator
 	lw a1, 0xf0000830
-	
+	# load the base framebuffer address
 	li t0, 0xf0000000
+	# load the base store address
 	la s0, store_data
+	# load 1 (useful constant)
 	li s1, 1
+	# move the return address to s4
 	addi s4, ra, 0
 	
 nextstate.loop:
+	# when finished processing, copy the store to framebuffer
 	beq t0, 0xf0000500, nextstate.copy
+	# initialise the counter to 0
 	li s2, 0
+	# calculate the column and store it in t3
 	li t3, 40
 	li t4, 0xf0000000
 	sub t4, t0, t4
 	div t4, t3
 	mfhi t3
+	# skip some checks if at top row
 	ble t0, 0xf0000029, nextstate.4
 	nop
 	
 nextstate.1:
+	# skip if at first column
 	beq t3, 0, nextstate.2
 	nop
+	# load top left cell
 	lb t1, -41(t0)
+	# skip the count if zero
 	beq t1, zero, nextstate.2
 	nop
 	jal nextstate.count
@@ -175,8 +187,10 @@ nextstate.9:
 	nop
 	
 nextstate.compute:
+	# keep the cell state if it has two neighbours
 	beq s2, 2, nextstate.survive
 	nop
+	# make the cell alive if it has three neighbours
 	beq s2, 3, nextstate.live
 	nop
 	
@@ -186,36 +200,49 @@ nextstate.die:
 	addi s0, s0, 1
 	j nextstate.loop
 	nop
+
 nextstate.survive:
 	sb t2, 0(s0)
 	addi t0, t0, 1
 	addi s0, s0, 1
 	j nextstate.loop
 	nop
+
 nextstate.live:
 	sb s1, 0(s0)
 	addi t0, t0, 1
 	addi s0, s0, 1
 	j nextstate.loop
 	nop
+
 nextstate.count:
 	addi s2, s2, 1
 	jr ra
 	nop
+
 nextstate.copy:
 	li t0, 0xf0000000
 	la s0, store_data
+
 nextstate.copy_loop:
-	beq t0, 0xf0000800, nextstate.end
+	# finish when all cells are copied
+	beq t0, 0xf0000500, nextstate.end
 	nop
+	# load the cell state from the store
 	lb t2, 0(s0)
+	# increase the store address
 	addi s0, s0, 1
+	# write the state to framebuffer
 	sb t2, 0(t0)
+	# increase framebuffer address
 	addi t0, t0, 1
 	
+	# continue looping
 	j nextstate.copy_loop
 	nop
+
 nextstate.end:
+	# jump back to original ra (stored in s4)
 	jr s4
 	nop
 	
@@ -226,3 +253,19 @@ nextstate.end:
 .data
 .align 2
 .comm store_data,2048,4
+
+#######################################################
+#
+# 1. The incremental compilation is especially useful
+#    for big projects where compiling the whole design
+#    takes a substantial amount of time. With IC enabled
+#    only the modules that were changed are recompiled.
+#
+# 2. Branch delay slots are instructions that are
+#    executed after a branch instruction regarless of
+#    whether the branch actually happened or not.
+#    This is due to the fact that the pipeline is
+#    running continuously and new instructions are
+#    fetched before a branch is resolved.
+#
+# 3. The MIPS processor is software interlocked.
